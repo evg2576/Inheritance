@@ -1,16 +1,29 @@
-﻿using System;
+using System;
 
 namespace InheritanceTask
 {
-    //TODO: Create public class 'Employee' here
+    public class Employee
+    {
+        private string name;
+        private decimal salary, bonus;
 
-    //TODO: Define three private fields: 'name'(string), 'salary'(decimal), 'bonus'(decimal)
-    //TODO: Define public property 'Name' for getting 'name'
-    //TODO: Define public property 'Salary' for getting and setting 'salary'
+        public string Name { get { return name; } }
+        public decimal Salary { get { return salary; } set { salary = value; } }
 
-    //TODO: Define constructor with two parameters: 'name'(string), 'salary'(decimal). Assign parameters to its fields
+        public Employee(string name, decimal salary)
+        {
+            this.name = name;
+            this.salary = salary;
+        }
 
-    //TODO: Define public virtual method 'SetBonus', that set value in 'bonus'
-    //TODO: Define public method 'ToPay', that returns sum of salary and bonus 
+        public virtual void SetBonus (decimal bonus)
+        {
+            this.bonus = bonus;
+        }
+        public decimal ToPay()
+        {
+            return salary + bonus;
+        }
+    }
 }
 
